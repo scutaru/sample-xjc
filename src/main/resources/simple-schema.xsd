@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xsd:schema
+        xmlns="http://sample.connector.net/schema/sampleconnector"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:jms="http://www.mulesoft.org/schema/mule/jms"
+        targetNamespace="http://sample.connector.net/schema/sampleconnector"
+        elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:import namespace="http://www.mulesoft.org/schema/mule/jms" schemaLocation="http://www.mulesoft.org/schema/mule/jms/current/mule-jms.xsd"/>
+
+    <xsd:element name="simple-outbound-endpoint" type="simpleOutboundEndpointType"
+                 substitutionGroup="jms:outbound-endpoint">
+        <xsd:annotation>
+            <xsd:documentation>
+                The inbound-endpoint element configures an endpoint to which JMS
+                messages are sent.
+            </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+    <xsd:complexType name="simpleOutboundEndpointType">
+        <xsd:complexContent>
+            <xsd:extension base="jms:outboundEndpointType">
+                <xsd:attribute name="pubCode"  type="xsd:string" />
+                <xsd:attribute name="pubLaneId"    type="xsd:string" />
+                <xsd:attribute name="pubPwd"   type="xsd:string" />
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+</xsd:schema>
