@@ -27,7 +27,7 @@
                     </execution>
                 </executions>
                 <configuration>
-<!--                    <catalog>src/main/resources/catalog.cat</catalog>-->
+                    <catalog>src/main/resources/catalog.cat</catalog>
                     <generateDirectory>${project.basedir}/target/generated</generateDirectory>
                     <extension>true</extension>
                     <strict>false</strict>
